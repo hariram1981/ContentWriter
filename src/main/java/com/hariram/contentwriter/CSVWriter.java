@@ -10,9 +10,14 @@ import java.util.Map;
  * @author hariram
  *
  */
-public class CSVWriter extends Writer {
+class CSVWriter extends Writer {
 	BufferedWriter writer = null;
 
+	/**
+	 * 
+	 * @param filePath
+	 * @param fileName
+	 */
 	public CSVWriter(String filePath, String fileName) {
 		this.filePath = filePath;
 		this.fileName = fileName;
@@ -24,6 +29,9 @@ public class CSVWriter extends Writer {
 		}		
 	}
 
+	/**
+	 * 
+	 */
 	@Override
 	public void write(Map<String, List<String>> dataMap) {
 		String lastKey = dataMap.keySet().stream()
@@ -55,7 +63,10 @@ public class CSVWriter extends Writer {
 			writeStr("\n");
 		});
 	}	
-	
+	/**
+	 * 
+	 * @param str
+	 */
 	private void writeStr(String str) {
 		if(writer != null) {
 			try {
