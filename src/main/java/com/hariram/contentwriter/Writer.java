@@ -11,7 +11,7 @@ import java.util.Map;
  *
  */
 abstract public class Writer {
-	protected String filePath = "";
+	protected String filePath = "/var/www/";
 	protected String fileName = "";
 	/**
 	 * 
@@ -32,7 +32,9 @@ abstract public class Writer {
 	 * @param filePath
 	 */
 	public void setFilePath(String filePath) {
-		this.filePath = filePath;
+		if(filePath != null || !filePath.equals("")) {
+			this.filePath = filePath;
+		}
 	}
 
 	/**

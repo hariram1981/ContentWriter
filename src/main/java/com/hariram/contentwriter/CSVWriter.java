@@ -19,7 +19,9 @@ class CSVWriter extends Writer {
 	 * @param fileName
 	 */
 	public CSVWriter(String filePath, String fileName) {
-		this.filePath = filePath;
+		if(filePath != null || !filePath.equals("")) {
+			this.filePath = filePath;
+		}
 		this.fileName = fileName;
 		try {
 			writer = new BufferedWriter(new FileWriter(this.filePath + this.fileName));
